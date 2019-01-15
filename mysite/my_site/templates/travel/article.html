@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'my_site/style/travel_style.css' %}">
+<link rel="stylesheet" href="{% static 'my_site/style/global_style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+	.col-2{
+		opacity: .7;
+	}
+
+	p {
+		color: white;
+	}
+
+	h1 {
+		color: #ff8000;
+	}
+</style>
+
+<div class="NavBar">
+	<div class="row">
+		<div class="col-nav">
+			<a class="selected" href="{% url 'about' %}">About</a>
+		</div>
+		<div class="col-nav">
+			<a href="{% url 'projects' %}">Projects</a>
+		</div>
+		<div class="col-nav">
+			<a href="{% url 'resume' %}">Resume</a>
+		</div>
+		<div class="col-nav">
+			<a href="{{ about.git_link }}"><i class="fa fa-github fa-sm"></i></a>
+		</div>
+		<div class="col-nav-in">
+			<a href="{{ about.linkedin }}"><i class="fa fa-linkedin fa-sm"></i></a>
+		</div>
+	</div>
+</div>
+
+<row>
+	<div class="col-1"></div>
+	<div class="col-2">
+		<h1>{{ place.place_name }}</h1>
+		<p>{{ place.article }}</p>
+	</div>
+	<div class="col-1"></div>
+</row>

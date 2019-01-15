@@ -1,0 +1,69 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'my_site/style/global_style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'my_site/style/resume_style.css' %}">
+
+<div class="NavBar">
+	<div class="row">
+		<div class="col-nav">
+			<a href="{% url 'about' %}">About</a>
+		</div>
+		<div class="col-nav">
+			<a href="{% url 'projects' %}">Projects</a>
+		</div>
+		<div class="col-nav">
+			<a class="selected" href="{% url 'resume' %}">Resume</a>
+		</div>
+		<div class="col-nav">
+			<a href="{{ about.git_link }}"><i class="fa fa-github fa-sm"></i></a>
+		</div>
+		<div class="col-nav-in">
+			<a href="{{ about.linkedin }}"><i class="fa fa-linkedin fa-sm"></i></a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+		<div class="col-1"></div>
+		<div class="col-2">
+
+		<h1>Skills:</h1>
+		<ul id="skills">
+			{% for skill in skills %}
+				<li><h3>{{ skill.skill }}</h3></li>
+			{% endfor %}
+		</ul>
+
+		<h1>Education:</h1>
+		<ul id="education">
+			{% for school in schools %}
+				<li>
+					<h2>{{ school.name }} <i>(Grad Year: {{ school.grad_date.year }})</i></h2>
+					<ul>
+						<li><p>{{ school.description }}</p></li>
+					</ul>
+				</li>
+
+			{%  endfor %}
+		</ul>
+
+		<h1>Experience:</h1>
+		<ul id="experience">
+			{% for position in positions %}
+				<li>
+					<h2>{{ position.title }} <i>({{ position.start_date.year }}-{{ position.end_date.year }})</i></h2>
+					<ul>
+						<li><p>Company: {{ position.company }}</p></li>
+						<li><p>Location: {{ position.city }}, {{ position.state }}</p></li>
+						<li><p>Description: {{ position.description }}</p></li>
+					</ul>
+				</li>
+			{% endfor %}
+		</ul>
+		
+		</div>
+		<div class="col-1"></div>
+</div>
+
+

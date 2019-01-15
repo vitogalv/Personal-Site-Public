@@ -1,0 +1,26 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'voucher/style/global_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'voucher/style/redeem_style.css' %}">
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-2">
+    <h1>Submit your Idea Form below</h1>
+  </div>
+  <div class="col-1"></div>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-2">
+    {% if error_message %}
+      <h2>{{error_message}}</h2>
+    {% endif %}
+    <form action="{% url 'redeem' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_ul }}
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <div class="col-1"></div>
+</div>

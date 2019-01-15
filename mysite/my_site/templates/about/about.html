@@ -1,0 +1,48 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'my_site/style/about_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'my_site/style/global_style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="NavBar">
+	<div class="row">
+		<div class="col-nav">
+			<a class="selected" href="{% url 'about' %}">About</a>
+		</div>
+		<div class="col-nav">
+			<a href="{% url 'projects' %}">Projects</a>
+		</div>
+		<div class="col-nav">
+			<a href="{% url 'resume' %}">Resume</a>
+		</div>
+		<div class="col-nav">
+			<a href="{{ about.git_link }}"><i class="fa fa-github fa-sm"></i></a>
+		</div>
+		<div class="col-nav-in">
+			<a href="{{ about.linkedin }}"><i class="fa fa-linkedin fa-sm"></i></a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-1"></div>
+	<div class="col-3">
+		<img id="portrait" src="{% static 'my_site/images/bust.jpg' %}" alt="Image">
+	</div>
+	<div class="col-2">
+		<div class="bio">
+			<h1>{{ about.bio_title }}</h1>
+			<p>{{ about.bio }}</p>
+		</div>
+	</div>
+	<div class="col-1"></div> 
+</div>
+
+<div class="row">
+	<div class="col-1"></div>
+	<div class="col-4">
+		<div class="quote">
+			<p>{{ quote.quote }} ~ {{ quote.author }}</p>
+		</div>
+	</div>
+</div>

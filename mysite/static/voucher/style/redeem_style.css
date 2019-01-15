@@ -1,0 +1,9 @@
+form {
+  align-items: center;
+  list-style-type: none;
+}
+input, textarea {
+  background-color: grey;
+  font-size: 20px;
+  margin-top: 15px;
+}

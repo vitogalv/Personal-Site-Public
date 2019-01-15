@@ -1,0 +1,73 @@
+
+body {
+	background: url("san-jose-skyline.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.col-1 { 
+	width: 0%; 
+	float: left;
+	padding: 15px;
+}
+.col-2 { 
+	width: 100%; 
+	float: left;
+	padding: 15px;
+}
+.col-3 {
+	width: 100%; 
+	float: left;
+	padding: 15px;
+}
+.col-4 { 
+	width: 100%; 
+	float: left;
+	padding: 15px;
+}
+
+@media only screen and (min-width: 675px){
+	.col-1 { 
+		width: 16.5%; 
+	}
+	.col-2 { 
+		width: 41.875%; 
+	}
+	.col-3 {
+		width: 25.125%; 
+	}
+	.col-4 { 
+		width: 67%; 
+	}
+}
+
+h1 {
+	color: #ff8000;
+}
+
+.bio {
+	background-color: #4e4e4e;
+	opacity: .6;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+p {
+	font-size: 50px;
+	color: white;
+}
+
+.bio p {
+	font-size: 30px;
+}
+
+img {
+	border-radius: 10px;
+	width: 100%;
+}
+.quote {
+	align-items: center;
+}
+.quote p {
+	text-align: center;
+}

@@ -1,0 +1,45 @@
+
+body {
+	background: #7c93b7 url("ocean-jungle.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.col-1 {
+	width: 0%;
+	float: left;
+	padding: 15px;
+}
+
+.col-2 {
+	width: 100%;
+	float: left;
+	padding: 15px;
+	padding-left: 20px;
+	margin-top: 20px;
+	background-color: #666666;
+	opacity: .8;
+	border-radius: 10px;
+}
+
+@media only screen and (min-width: 675px){
+	.col-1 {
+		width : 20%;
+	}
+	.col-2 {
+		width: 60%;
+	}
+}
+
+h1 {
+	color: #ff8000;
+}
+
+h2, h3, p {
+	color: white;
+}
+
+p{
+	size: 20px;
+}
+

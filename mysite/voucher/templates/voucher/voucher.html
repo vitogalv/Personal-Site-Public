@@ -1,0 +1,20 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'voucher/style/global_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'voucher/style/voucher_style.css' %}">
+
+<div class="row">
+  <div class="col-space"></div>
+  <div class="col-pic">
+    <img id="merry-christmas" src="{% static 'voucher/images/merry-christmas.jpg' %}" alt="Merry Christmas">
+  </div>
+  <div class="col-space"></div>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-2">
+    <h1>Good For 1 Free Website</h1>
+    <a href="{% url 'redeem' %}">Redeem!</a>
+  </div>
+  <div class="col-1"></div>
+</div>

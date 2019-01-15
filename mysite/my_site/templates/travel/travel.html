@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'my_site/style/travel_style.css' %}">
+<link rel="stylesheet" href="{% static 'my_site/style/global_style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="NavBar">
+	<div class="row">
+		<div class="col-nav">
+			<a class="selected" href="{% url 'about' %}">About</a>
+		</div>
+		<div class="col-nav">
+			<a href="{% url 'projects' %}">Projects</a>
+		</div>
+		<div class="col-nav">
+			<a href="{% url 'resume' %}">Resume</a>
+		</div>
+		<div class="col-nav">
+			<a href="{{ about.git_link }}"><i class="fa fa-github fa-sm"></i></a>
+		</div>
+		<div class="col-nav-in">
+			<a href="{{ about.linkedin }}"><i class="fa fa-linkedin fa-sm"></i></a>
+		</div>
+	</div>
+</div>
+{% for place in places %}
+	<div class="row">
+		<div class="col-1"></div>
+		<a href="{% url 'article' place.place_name %}">
+			<div class="col-2" style="background: url('{{ place.thumbnail.url }}') no-repeat; background-size: cover; background-position: center;">
+				<h3 class="caption">{{ place.place_name }}</h3>
+			</div>
+		</a>
+		<div class="col-1"></div>
+	</div>
+{% endfor %}
